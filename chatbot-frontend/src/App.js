@@ -13,7 +13,7 @@ function App() {
 
   const fetchMessages = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/messages');
+      const response = await axios.get('https://chatbot-backend-82io.onrender.com/api/messages');
       setMessages(response.data);
     } catch (error) {
       console.error('Error fetching messages:', error);
@@ -22,7 +22,7 @@ function App() {
 
   const sendMessage = async () => {
     try {
-      await axios.post('http://localhost:5000/api/messages', newMessage);
+      await axios.post('https://chatbot-backend-82io.onrender.com/api/messages', newMessage);
       setMessages([...messages, newMessage]);
 
       setNewMessage({ ...newMessage, content: '' });
